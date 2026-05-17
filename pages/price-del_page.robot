@@ -5,30 +5,43 @@ Library    string
 Library    ../helper/env_reader.py  
 
 *** Variables ***
-${product_container}    xpath=//li[contains(@class,'product') and contains(@class,'post-532')]
-${sale_price_del}       xpath=//li[contains(@class,'product') and contains(@class,'post-532')]//del[@aria-hidden="true"]
-${Articles}    //li[contains(@class,'post-{}')]
+${product}            xpath=//li[contains(@class,'post-{}')]
+${original_price}     xpath=//li[contains(@class,'post-{}')]//del[@aria-hidden="true"]//bdi
+${Hidden}               xpath=//del[@aria-hidden="true"]
+${sale_price}         xpath=//li[contains(@class,'post-{}')]//ins//bdi
+
 
 *** Keywords ***
 
-Check The Previous Price Is Displayed
-    [Documentation]    Check if the original price is displayed for a specific product
-    [Arguments]      ${Reference}
-    ${Menu_Element}=                  Get WebElement    xpath:${Articles.format(${Reference})}
-    Execute JavaScript    window.scrollBy(0, 1000)
-    Sleep    1s
-    Scroll Element Into View         ${Menu_Element}
-    Execute JavaScript    document.querySelector('.woocommerce-store-notice').style.display = 'none';
-    Sleep    5s
+Check Product Has Two Prices With One Crossed
+    [Documentation]    Verify product has both original (crossed) and sale price
+    [Arguments]    ${Reference}
+
+    ${original_price}=    Set Variable    xpath=//li[contains(@class,'post-${Reference}')]//del[@aria-hidden="true"]//bdi
+    ${sale_price}=        Set Variable    xpath=//li[contains(@class,'post-${Reference}')]//ins//bdi
+
+    # Actual assertions using Run Keyword And Return Status
+    ${has_crossed}=    Run Keyword And Return Status
+    ...    Page Should Contain Element    ${original_price}
+    Should Be True    ${has_crossed}    msg=No crossed out price found
+
+    ${has_sale}=    Run Keyword And Return Status
+    ...    Page Should Contain Element    ${sale_price}
+    Should Be True    ${has_sale}    msg=No sale price found
+
+    # Get values
+    ${raw_original}=    Get Text    ${original_price}
+    ${raw_sale}=        Get Text    ${sale_price}
+
+    ${original}=    Evaluate    "${raw_original}".replace("€", "").strip()
+    ${sale}=        Evaluate    "${raw_sale}".replace("€", "").strip()
+
+    Should Be True    ${original} > ${sale}
+    ...    msg=Original €${original} should be greater than sale €${sale}
+
+    Log    Crossed price: €${original}    level=INFO
+    Log    Sale price: €${sale}           level=INFO
     ${timestamp}=    Evaluate    datetime.datetime.now().strftime('_%Y%m%d_%H%M%S')
-    Capture Element Screenshot                    ${Menu_Element}    filename=PDP_Screenshots/total_price_${timestamp}.png
-
-
-Product Has Original Price
-    [Documentation]    Check if a specific product has a strikethrough price
-    [Arguments]    ${product_id}
-    ${sale_locator}=    Set Variable    xpath=//li[contains(@class,'post-${product_id}')]//del[@aria-hidden="true"]
-    ${exists}=          Run Keyword And Return Status
-    ...                 Page Should Contain Element    ${sale_locator}
-    Log    Product ${product_id} has original price: ${exists}    level=INFO
-    RETURN    ${exists}
+    ${Menu_Element}=                  Get WebElement    ${product.format(${Reference})}
+    Capture Element Screenshot                    ${Menu_Element}    filename=PDP_Screenshots/product_price_${timestamp}.png
+    Capture Page Screenshot    filename=PDP_Screenshots/product_page_${timestamp}.png

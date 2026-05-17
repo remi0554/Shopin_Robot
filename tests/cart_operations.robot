@@ -15,7 +15,7 @@ Add Elements To Cart
     [Tags]    cart
     access To URL    ${Browser}
     Sleep    2s
-    Login
+    login2
     Sleep    2s
     Add Element To Cart By Name    "Brown Cap"
     Sleep    2s
@@ -24,7 +24,7 @@ Add New Elements To Cart
     [Tags]    cart
     access To URL    ${Browser}
     Sleep    2s
-    Login
+    Login1
     Sleep   2s
     Add Element To Cart By Name    "Elegant Bag"
     Sleep    2s
@@ -33,12 +33,13 @@ Add Third Element To Cart
     [Tags]    cart
     access To URL    ${Browser}
     Sleep    2s
-    Login
+    Login1
     Sleep    2s
     Add Element To Cart By Name    "Casquette de running"
 
 Reduce Elements Quantity From Cart
     [Documentation]    authenticate, add elements to cart and delete them
+    [Tags]    Quantity
     View Cart
     Sleep    2s
     Remove Item From Cart    "Brown Cap"
@@ -46,6 +47,7 @@ Reduce Elements Quantity From Cart
 
 Add Elements Quantity To Cart
     [Documentation]    authenticate, add elements to cart and increase their quantity
+    [Tags]    Quantity
     View Cart
     Sleep    2s
     Add Item quantity    "Elegant Bag"
@@ -53,18 +55,23 @@ Add Elements Quantity To Cart
 
 Try Promo Code
     [Documentation]    authenticate, add elements to cart and try promotion code
+    [Tags]    PROMO Test
     Go To Boutique Page
     Sleep    2s
     View Cart
     Sleep    2s
     Click Cookie Confirm
         Sleep    1s
-        Try Promotion Code
+    Scroll Down 15cm
+    Try Promotion Code
         Sleep    5s
 
 
 Check Promo Code
-    [Documentation]    Test to verify that promotion code is applied and total price is updated
+    [Documentation]    Le code promo "PROMO" applique une réduction de 15 %
+    [Tags]    promotion
+    Scroll Down 15cm
+    Sleep    2s
     check If Promo_Code is Applied
     sleep    2s
 

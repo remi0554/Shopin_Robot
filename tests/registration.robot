@@ -11,13 +11,13 @@ ${Used_Mail}    remitgm@gmail.com
 *** Test Cases ***
 
 Account Creation with Used Email
-    [Documentation]    Create an account with random username and password and used email adress
+    [Documentation]    Go to shopin registration page, try to create an account with random username and password but used email, and check that error message is visible
     Access To URL    ${Browser}
     Sleep    4s
     Go To    https://shop-in.ovh/mon-compte/
 
 Create New Account with used email
-    [Documentation]    Create an account with random username and password and used email adress
+    [Documentation]    Un email déjà utilisé empêche la création d'un nouveau compte
     Create Account with Random Credentials and Used Email    ${Used_Mail}
 
 Check Error Message Is Visible

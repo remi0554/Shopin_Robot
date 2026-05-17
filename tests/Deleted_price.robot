@@ -23,8 +23,8 @@ Go To Accessories Page Crossed Prices
     Sleep    2s
 
 
-Verify Snapback Cap Has Two Prices
-    [Documentation]    Verify product shows both original and discounted price
+Verify Product Has Two Prices
+    [Documentation]    Les produits en promotion doivent afficher le prix d'origine barré et le prix de vente
     Scroll Down 15cm
     Sleep    2s
     Click Cookie Confirm

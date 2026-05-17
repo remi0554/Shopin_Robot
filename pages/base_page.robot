@@ -15,5 +15,8 @@ Access To URL
 Scroll Down 5cm
     Execute Javascript    window.scrollBy(0, 190)
 
+Scroll Down 15cm
+    Execute Javascript    window.scrollBy(0, 800)
+
 End Web Test
     Close All Browsers

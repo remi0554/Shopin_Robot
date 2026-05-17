@@ -15,15 +15,25 @@ ${Username_Message}    Hello remitgm
 
 *** Keywords ***
 
-login
+login1
 
-          ${username}=    Get Env    USERNAMES
-          ${password}=    Get Env    PASSWORDS
+          ${username}=    Get Env    USERNAME1
+          ${password}=    Get Env    PASSWORD1
           Click Element    ${click_logo}
           Input Text    ${username_elem}     ${username}
           Input Text    ${password_elem}     ${password}
           Wait Until Element Is Visible    ${btn_elem} 
           Click Button    ${btn_elem} 
+
+Login2
+
+          ${username}=    Get Env    USERNAME2
+          ${password}=    Get Env    PASSWORD2
+          Click Element    ${click_logo}
+          Input Text    ${username_elem}     ${username}
+          Input Text    ${password_elem}     ${password}
+          Wait Until Element Is Visible    ${btn_elem} 
+          Click Button    ${btn_elem}
 
 Verify Element Is Visible
     [Documentation]    Verify the welcome message appears after login
