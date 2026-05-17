@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-05-17T01:47:10.120273" rpa="false" schemaversion="5">
+<suite id="s1" name="Deleted price" source="D:\QA_Formation\49--Soutenance\Projets\Robot\tests\Deleted_price.robot">
+<test id="s1-t1" name="Go To Accessories Page Crossed Prices" line="13">
+<kw name="Access To URL" owner="base_page">
+<kw name="Get Env" owner="env_reader">
+<msg time="2026-05-17T01:47:10.471371" level="INFO">${URL} = https://shop-in.ovh/</msg>
+<var>${URL}</var>
+<arg>URL</arg>
+<status status="PASS" start="2026-05-17T01:47:10.471196" elapsed="0.000214"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:10.471844" level="INFO">Opening browser 'Chrome' to base url 'https://shop-in.ovh/'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-17T01:47:10.471575" elapsed="4.574119"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-17T01:47:15.045998" elapsed="0.075815"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-05-17T01:47:15.122048" elapsed="0.001407"/>
+</kw>
+<arg>${Browser}</arg>
+<status status="PASS" start="2026-05-17T01:47:10.470453" elapsed="4.653213"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-17T01:47:17.125733" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-17T01:47:15.124142" elapsed="2.001707"/>
+</kw>
+<kw name="Go To Accessories Page" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Boutique}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-17T01:47:17.126484" elapsed="0.017701"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:17.144581" level="INFO">Simulating Mouse Over on element 'id=menu-item-689'.</msg>
+<arg>${Boutique}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-05-17T01:47:17.144359" elapsed="0.302897"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Boutique_Accessoires}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-17T01:47:17.447439" elapsed="0.024890"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:17.472718" level="INFO">Clicking element 'id=menu-item-1553'.</msg>
+<arg>${Boutique_Accessoires}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-17T01:47:17.472500" elapsed="1.580573"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Accessories</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-17T01:47:19.053381" elapsed="0.014152"/>
+</kw>
+<doc>Hover over Boutique then click Accessories submenu then click on a specific product</doc>
+<status status="PASS" start="2026-05-17T01:47:17.126205" elapsed="1.941458"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-17T01:47:21.069066" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-17T01:47:19.068000" elapsed="2.001175"/>
+</kw>
+<kw name="Scroll Down 5cm" owner="base_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:21.070088" level="INFO">Executing JavaScript:
+window.scrollBy(0, 190)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 190)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-05-17T01:47:21.069740" elapsed="0.004200"/>
+</kw>
+<status status="PASS" start="2026-05-17T01:47:21.069478" elapsed="0.004563"/>
+</kw>
+<kw name="Check The Previous Price Is Displayed" owner="price-del_page">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:21.086357" level="INFO">${Menu_Element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a1b8074e8f0cca49ef1add9aa051cc34", element="f.FE7B7609DB0B18C8FAE2A172163EBE24.d.2F3FC01546F7E19132B925CA7B1CFB6F.e.176")&gt;</msg>
+<var>${Menu_Element}</var>
+<arg>xpath:${Articles.format(${Reference})}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-05-17T01:47:21.074652" elapsed="0.011777"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:21.087163" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-05-17T01:47:21.086668" elapsed="0.004457"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-17T01:47:22.092198" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-17T01:47:21.091413" elapsed="1.000891"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${Menu_Element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-05-17T01:47:22.092465" elapsed="0.269349"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:22.362465" level="INFO">Executing JavaScript:
+document.querySelector('.woocommerce-store-notice').style.display = 'none';
+Without any arguments.</msg>
+<arg>document.querySelector('.woocommerce-store-notice').style.display = 'none';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-05-17T01:47:22.362028" elapsed="0.004911"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-17T01:47:27.368008" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-17T01:47:22.367123" elapsed="5.001005"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-17T01:47:27.368846" level="INFO">${timestamp} = _20260517_014727</msg>
+<var>${timestamp}</var>
+<arg>datetime.datetime.now().strftime('_%Y%m%d_%H%M%S')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-17T01:47:27.368299" elapsed="0.000587"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:27.489848" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PDP_Screenshots/total_price__20260517_014727.png"&gt;&lt;img src="PDP_Screenshots/total_price__20260517_014727.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${Menu_Element}</arg>
+<arg>filename=PDP_Screenshots/total_price_${timestamp}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2026-05-17T01:47:27.369059" elapsed="0.120911"/>
+</kw>
+<arg>532</arg>
+<doc>Check if the original price is displayed for a specific product</doc>
+<status status="PASS" start="2026-05-17T01:47:21.074353" elapsed="6.415731"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.490774" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-17T01:47:27.490350" elapsed="2.000565"/>
+</kw>
+<doc>Go to accessories page and select snapback cap</doc>
+<status status="PASS" start="2026-05-17T01:47:10.469679" elapsed="19.021641"/>
+</test>
+<test id="s1-t2" name="Verify Snapback Cap Has Sale Price Crossed Out" line="23">
+<kw name="Product Has Original Price" owner="price-del_page">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.493220" level="INFO">${sale_locator} = xpath=//li[contains(@class,'post-532')]//del[@aria-hidden="true"]</msg>
+<var>${sale_locator}</var>
+<arg>xpath=//li[contains(@class,'post-${product_id}')]//del[@aria-hidden="true"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.492851" elapsed="0.000402"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:29.503142" level="INFO">Current page contains element 'xpath=//li[contains(@class,'post-532')]//del[@aria-hidden="true"]'.</msg>
+<arg>${sale_locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.493675" elapsed="0.009555"/>
+</kw>
+<msg time="2026-05-17T01:47:29.503358" level="INFO">${exists} = True</msg>
+<var>${exists}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${sale_locator}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.493387" elapsed="0.010010"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.503923" level="INFO">Product 532 has original price: True</msg>
+<arg>Product ${product_id} has original price: ${exists}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.503538" elapsed="0.000455"/>
+</kw>
+<return>
+<value>${exists}</value>
+<status status="PASS" start="2026-05-17T01:47:29.504061" elapsed="0.000065"/>
+</return>
+<msg time="2026-05-17T01:47:29.504271" level="INFO">${on_sale} = True</msg>
+<var>${on_sale}</var>
+<arg>532</arg>
+<doc>Check if a specific product has a strikethrough price</doc>
+<status status="PASS" start="2026-05-17T01:47:29.492536" elapsed="0.011763"/>
+</kw>
+<if>
+<branch type="IF" condition="${on_sale}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.504969" level="INFO">Product is ON SALE</msg>
+<arg>Product is ON SALE</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.504692" elapsed="0.000335"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-05-17T01:47:29.526430" level="INFO">${raw_original} = €45.00</msg>
+<var>${raw_original}</var>
+<arg>xpath=//li[contains(@class,'post-532')]//del//bdi</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.505165" elapsed="0.021314"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.527056" level="INFO">${original} = 45.00</msg>
+<var>${original}</var>
+<arg>"${raw_original}".replace("€", "").strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.526644" elapsed="0.000444"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-17T01:47:29.527493" level="INFO">Original price was: 45.00</msg>
+<arg>Original price was: ${original}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-17T01:47:29.527207" elapsed="0.000333"/>
+</kw>
+<status status="PASS" start="2026-05-17T01:47:29.504518" elapsed="0.023071"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Product is NOT on sale</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-05-17T01:47:29.527826" elapsed="0.000035"/>
+</kw>
+<status status="NOT RUN" start="2026-05-17T01:47:29.527671" elapsed="0.000240"/>
+</branch>
+<status status="PASS" start="2026-05-17T01:47:29.504483" elapsed="0.023469"/>
+</if>
+<doc>Verify that the snapback cap has a sale price and that the original</doc>
+<status status="PASS" start="2026-05-17T01:47:29.491972" elapsed="0.036187"/>
+</test>
+<status status="PASS" start="2026-05-17T01:47:10.123252" elapsed="19.405439"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Deleted price" id="s1" pass="2" fail="0" skip="0">Deleted price</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
