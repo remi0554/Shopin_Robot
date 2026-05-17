@@ -1,11 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../pages/alert_page.robot
 Resource    ../pages/base_page.robot
 Resource    ../pages/home_page.robot
 Resource    ../pages/price-del_page.robot
 
 *** Variables ***
 ${Browser}    Chrome
+${Product_Reference}    532
 
 
 *** Test Cases ***
@@ -17,17 +19,13 @@ Go To Accessories Page Crossed Prices
     Go To Accessories Page
     Sleep    2s
     Scroll Down 5cm
-    Check The Previous Price Is Displayed    532
+    # Check The Previous Price Is Displayed    532
     Sleep    2s
 
-Verify Snapback Cap Has Sale Price Crossed Out
-    [Documentation]    Verify that the snapback cap has a sale price and that the original
-    ${on_sale}=    Product Has Original Price    532
-    IF    ${on_sale}
-        Log    Product is ON SALE    level=INFO
-        ${raw_original}=    Get Text    xpath=//li[contains(@class,'post-532')]//del//bdi
-        ${original}=        Evaluate    "${raw_original}".replace("€", "").strip()
-        Log    Original price was: ${original}    level=INFO
-    ELSE
-        Log    Product is NOT on sale    level=INFO
-    END
+
+Verify Snapback Cap Has Two Prices
+    [Documentation]    Verify product shows both original and discounted price
+    Scroll Down 15cm
+    Sleep    2s
+    Click Cookie Confirm
+    Check Product Has Two Prices With One Crossed    ${Product_Reference}
