@@ -20,7 +20,8 @@ Test Random Username
 check initial price is crossed-out
     Go To Boutique Page
     Sleep    2s
-    Go To Accessories Page    "Snapback Cap"
+    Go To Accessories Page
+    
     Sleep    2s
 # cart operations
 #     View Cart
