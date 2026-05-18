@@ -5,9 +5,24 @@ on:
     branches: [ Shopin_CI-CD ]
   pull_request:
     branches: [ Shopin_Main ]
-  schedule:
-    - cron: '0 8 * * *'        # runs every day at 8am
-
+  # schedule:
+  #   - cron: '0 8 * * *'        # runs every day at 8am
+  
+  workflow_dispatch:          # ← this enables manual trigger button
+    inputs:
+      browser:
+        description: 'Browser to use'
+        required: true
+        default: 'headless-chrome'
+        type: choice
+        options:
+          - headless-chrome
+          - chrome
+      test_suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'tests/'
+        
 jobs:
   robot-tests:
     runs-on: ubuntu-latest
