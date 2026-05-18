@@ -1,278 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-05-17T20:48:18.980311" rpa="false" schemaversion="5">
-<suite id="s1" name="Deleted Price" source="D:\QA_Formation\49--Soutenance\Projets\Robot\tests\deleted_price.robot">
-<test id="s1-t1" name="Go To Accessories Page Crossed Prices" line="15">
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-05-18T14:47:58.304611" rpa="false" schemaversion="5">
+<suite id="s1" name="Authentication" source="D:\QA_Formation\49--Soutenance\Projets\Robot\tests\authentication.robot">
+<test id="s1-t1" name="Authentication With Valid Credentials" line="11">
 <kw name="Access To URL" owner="base_page">
 <kw name="Get Env" owner="env_reader">
-<msg time="2026-05-17T20:48:19.315814" level="INFO">${URL} = https://shop-in.ovh/</msg>
+<msg time="2026-05-18T14:47:58.670726" level="INFO">${URL} = https://shop-in.ovh/</msg>
 <var>${URL}</var>
 <arg>URL</arg>
-<status status="PASS" start="2026-05-17T20:48:19.315602" elapsed="0.000267"/>
+<status status="PASS" start="2026-05-18T14:47:58.670517" elapsed="0.000251"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:19.316342" level="INFO">Opening browser 'Chrome' to base url 'https://shop-in.ovh/'.</msg>
+<msg time="2026-05-18T14:47:58.671216" level="INFO">Opening browser 'Chrome' to base url 'https://shop-in.ovh/'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-17T20:48:19.316072" elapsed="4.546970"/>
+<status status="PASS" start="2026-05-18T14:47:58.670957" elapsed="2.802927"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-05-17T20:48:23.863241" elapsed="0.060310"/>
+<status status="PASS" start="2026-05-18T14:48:01.474099" elapsed="0.067719"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>20s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2026-05-17T20:48:23.923730" elapsed="0.000986"/>
+<status status="PASS" start="2026-05-18T14:48:01.542002" elapsed="0.001541"/>
 </kw>
 <arg>${Browser}</arg>
-<status status="PASS" start="2026-05-17T20:48:19.314894" elapsed="4.609929"/>
+<status status="PASS" start="2026-05-18T14:47:58.669718" elapsed="2.873963"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-17T20:48:25.926014" level="INFO">Slept 2 seconds.</msg>
+<msg time="2026-05-18T14:48:03.545112" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-17T20:48:23.925109" elapsed="2.001007"/>
+<status status="PASS" start="2026-05-18T14:48:01.544066" elapsed="2.001155"/>
 </kw>
-<kw name="Go To Accessories Page" owner="home_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Boutique}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-17T20:48:25.926777" elapsed="0.016529"/>
+<kw name="login1" owner="login_page">
+<kw name="Get Env" owner="env_reader">
+<msg time="2026-05-18T14:48:03.546156" level="INFO">${username} = remitgm</msg>
+<var>${username}</var>
+<arg>USERNAME1</arg>
+<status status="PASS" start="2026-05-18T14:48:03.545990" elapsed="0.000198"/>
 </kw>
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:25.943705" level="INFO">Simulating Mouse Over on element 'id=menu-item-689'.</msg>
-<arg>${Boutique}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:25.943482" elapsed="0.271755"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Boutique_Accessoires}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-17T20:48:26.215530" elapsed="0.019290"/>
+<kw name="Get Env" owner="env_reader">
+<msg time="2026-05-18T14:48:03.546415" level="INFO">${password} = A-zerty2026</msg>
+<var>${password}</var>
+<arg>PASSWORD1</arg>
+<status status="PASS" start="2026-05-18T14:48:03.546296" elapsed="0.000151"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:26.235339" level="INFO">Clicking element 'id=menu-item-1553'.</msg>
-<arg>${Boutique_Accessoires}</arg>
+<msg time="2026-05-18T14:48:03.546865" level="INFO">Clicking element '//*[name()='path' and contains(@d,'M7.5,0C3.4')]'.</msg>
+<arg>${click_logo}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:26.235047" elapsed="1.834398"/>
+<status status="PASS" start="2026-05-18T14:48:03.546553" elapsed="1.399075"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Accessories</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-05-17T20:48:28.069645" elapsed="0.012900"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-18T14:48:04.946061" level="INFO">Typing text 'remitgm' into text field 'id=username'.</msg>
+<arg>${username_elem}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-18T14:48:04.945805" elapsed="0.112288"/>
 </kw>
-<doc>Hover over Boutique then click Accessories submenu then click on a specific product</doc>
-<status status="PASS" start="2026-05-17T20:48:25.926487" elapsed="2.156235"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-18T14:48:05.058666" level="INFO">Typing text 'A-zerty2026' into text field 'id=password'.</msg>
+<arg>${password_elem}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-18T14:48:05.058338" elapsed="0.113109"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-17T20:48:30.083674" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-17T20:48:28.083024" elapsed="2.000750"/>
-</kw>
-<kw name="Scroll Down 5cm" owner="base_page">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:30.084717" level="INFO">Executing JavaScript:
-window.scrollBy(0, 190)
-Without any arguments.</msg>
-<arg>window.scrollBy(0, 190)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-05-17T20:48:30.084382" elapsed="0.004433"/>
-</kw>
-<status status="PASS" start="2026-05-17T20:48:30.084126" elapsed="0.004779"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-17T20:48:32.089579" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-17T20:48:30.089164" elapsed="2.000523"/>
-</kw>
-<doc>Go to accessories page and select snapback cap</doc>
-<status status="PASS" start="2026-05-17T20:48:19.314108" elapsed="12.775830"/>
-</test>
-<test id="s1-t2" name="Verify Product Has Two Prices" line="26">
-<kw name="Scroll Down 15cm" owner="base_page">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:32.091420" level="INFO">Executing JavaScript:
-window.scrollBy(0, 800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0, 800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-05-17T20:48:32.091086" elapsed="0.004122"/>
-</kw>
-<status status="PASS" start="2026-05-17T20:48:32.090846" elapsed="0.004471"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.096250" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-17T20:48:32.095548" elapsed="2.000808"/>
-</kw>
-<kw name="Click Cookie Confirm" owner="alert_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Cookie_Confirm_BTN}</arg>
+<arg>${btn_elem}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.096934" elapsed="0.014264"/>
+<status status="PASS" start="2026-05-18T14:48:05.171658" elapsed="0.014965"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.111578" level="INFO">Clicking button 'xpath=//button[@class='ct-button ct-cookies-accept-button']'.</msg>
-<arg>${Cookie_Confirm_BTN}</arg>
+<msg time="2026-05-18T14:48:05.187011" level="INFO">Clicking button 'xpath=//button[@name='login']'.</msg>
+<arg>${btn_elem}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.111363" elapsed="0.073408"/>
+<status status="PASS" start="2026-05-18T14:48:05.186791" elapsed="0.067427"/>
 </kw>
-<status status="PASS" start="2026-05-17T20:48:34.096677" elapsed="0.088228"/>
+<status status="PASS" start="2026-05-18T14:48:03.545648" elapsed="1.708686"/>
 </kw>
-<kw name="Check Product Has Two Prices With One Crossed" owner="price-del_page">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.186131" level="INFO">${original_price} = xpath=//li[contains(@class,'post-532')]//del[@aria-hidden="true"]//bdi</msg>
-<var>${original_price}</var>
-<arg>xpath=//li[contains(@class,'post-${Reference}')]//del[@aria-hidden="true"]//bdi</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.185761" elapsed="0.000403"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-18T14:48:07.255473" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-18T14:48:05.254575" elapsed="2.001015"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.186567" level="INFO">${sale_price} = xpath=//li[contains(@class,'post-532')]//ins//bdi</msg>
-<var>${sale_price}</var>
-<arg>xpath=//li[contains(@class,'post-${Reference}')]//ins//bdi</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.186278" elapsed="0.000332"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.216182" level="INFO">Current page contains element 'xpath=//li[contains(@class,'post-532')]//del[@aria-hidden="true"]//bdi'.</msg>
-<arg>${original_price}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.187085" elapsed="0.029195"/>
-</kw>
-<msg time="2026-05-17T20:48:34.216412" level="INFO">${has_crossed} = True</msg>
-<var>${has_crossed}</var>
-<arg>Page Should Contain Element</arg>
-<arg>${original_price}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.186733" elapsed="0.029706"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${has_crossed}</arg>
-<arg>msg=No crossed out price found</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.216583" elapsed="0.000340"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.225496" level="INFO">Current page contains element 'xpath=//li[contains(@class,'post-532')]//ins//bdi'.</msg>
-<arg>${sale_price}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.217348" elapsed="0.008234"/>
-</kw>
-<msg time="2026-05-17T20:48:34.225710" level="INFO">${has_sale} = True</msg>
-<var>${has_sale}</var>
-<arg>Page Should Contain Element</arg>
-<arg>${sale_price}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.217071" elapsed="0.008666"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${has_sale}</arg>
-<arg>msg=No sale price found</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.225873" elapsed="0.000329"/>
+<status status="PASS" start="2026-05-18T14:47:58.668801" elapsed="8.587073"/>
+</test>
+<test id="s1-t2" name="Verify Message Is Visible" line="17">
+<kw name="Verify Element Is Visible" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${welcome_locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-18T14:48:07.257078" elapsed="0.540948"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.242063" level="INFO">${raw_original} = €45.00</msg>
-<var>${raw_original}</var>
-<arg>${original_price}</arg>
+<msg time="2026-05-18T14:48:07.816244" level="INFO">${welcome_text} = Hello remitgm (not remitgm? Log out)</msg>
+<var>${welcome_text}</var>
+<arg>${welcome_locator}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.226320" elapsed="0.015790"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.253772" level="INFO">${raw_sale} = €5.00</msg>
-<var>${raw_sale}</var>
-<arg>${sale_price}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.242263" elapsed="0.011555"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.254378" level="INFO">${original} = 45.00</msg>
-<var>${original}</var>
-<arg>"${raw_original}".replace("€", "").strip()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.253973" elapsed="0.000437"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.254836" level="INFO">${sale} = 5.00</msg>
-<var>${sale}</var>
-<arg>"${raw_sale}".replace("€", "").strip()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.254522" elapsed="0.000345"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${original} &gt; ${sale}</arg>
-<arg>msg=Original €${original} should be greater than sale €${sale}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.254972" elapsed="0.000387"/>
+<status status="PASS" start="2026-05-18T14:48:07.798217" elapsed="0.018074"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.255768" level="INFO">Crossed price: €45.00</msg>
-<arg>Crossed price: €${original}</arg>
+<msg time="2026-05-18T14:48:07.816834" level="INFO">Welcome message: Hello remitgm (not remitgm? Log out)</msg>
+<arg>Welcome message: ${welcome_text}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.255475" elapsed="0.000345"/>
+<status status="PASS" start="2026-05-18T14:48:07.816452" elapsed="0.000437"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.256247" level="INFO">Sale price: €5.00</msg>
-<arg>Sale price: €${sale}</arg>
-<arg>level=INFO</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.255927" elapsed="0.000387"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${welcome_text}</arg>
+<arg>${Username_Message}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-05-18T14:48:07.817015" elapsed="0.000521"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${welcome_text}</arg>
+<arg>Log out</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-05-18T14:48:07.817687" elapsed="0.000345"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-17T20:48:34.256876" level="INFO">${timestamp} = _20260517_204834</msg>
+<msg time="2026-05-18T14:48:07.818685" level="INFO">${timestamp} = _20260518_144807</msg>
 <var>${timestamp}</var>
 <arg>datetime.datetime.now().strftime('_%Y%m%d_%H%M%S')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.256467" elapsed="0.000451"/>
-</kw>
-<kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.266226" level="INFO">${Menu_Element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2ae131619246605eec0cf07a97698d50", element="f.B086A4F819EC371946AB01BBBEC44217.d.1F3838A81009E32D9138A2C9DCFBB88D.e.174")&gt;</msg>
-<var>${Menu_Element}</var>
-<arg>${product.format(${Reference})}</arg>
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.257036" elapsed="0.009245"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.357756" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PDP_Screenshots/product_price__20260517_204834.png"&gt;&lt;img src="PDP_Screenshots/product_price__20260517_204834.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${Menu_Element}</arg>
-<arg>filename=PDP_Screenshots/product_price_${timestamp}.png</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.266442" elapsed="0.091410"/>
+<status status="PASS" start="2026-05-18T14:48:07.818185" elapsed="0.000540"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-05-17T20:48:34.475695" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PDP_Screenshots/product_page__20260517_204834.png"&gt;&lt;img src="PDP_Screenshots/product_page__20260517_204834.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>filename=PDP_Screenshots/product_page_${timestamp}.png</arg>
+<msg time="2026-05-18T14:48:07.946014" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="LP_Screenshots/welcome_verified__20260518_144807.png"&gt;&lt;img src="LP_Screenshots/welcome_verified__20260518_144807.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=LP_Screenshots/welcome_verified_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-05-17T20:48:34.358017" elapsed="0.117776"/>
+<status status="PASS" start="2026-05-18T14:48:07.818869" elapsed="0.127239"/>
 </kw>
-<arg>${Product_Reference}</arg>
-<doc>Verify product has both original (crossed) and sale price</doc>
-<status status="PASS" start="2026-05-17T20:48:34.185395" elapsed="0.290489"/>
+<doc>Verify the welcome message appears after login</doc>
+<status status="PASS" start="2026-05-18T14:48:07.256844" elapsed="0.689371"/>
 </kw>
-<doc>Les produits en promotion doivent afficher le prix d'origine barré et le prix de vente</doc>
-<status status="PASS" start="2026-05-17T20:48:32.090358" elapsed="2.385732"/>
+<doc>Un message personnalisé doit s'afficher lors de la connexion d'un utilisateur existant</doc>
+<tag>visibility</tag>
+<status status="PASS" start="2026-05-18T14:48:07.256318" elapsed="0.690147"/>
 </test>
-<status status="PASS" start="2026-05-17T20:48:18.982563" elapsed="15.494135"/>
+<status status="PASS" start="2026-05-18T14:47:58.306850" elapsed="9.640163"/>
 </suite>
 <statistics>
 <total>
 <stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">visibility</stat>
 </tag>
 <suite>
-<stat name="Deleted Price" id="s1" pass="2" fail="0" skip="0">Deleted Price</stat>
+<stat name="Authentication" id="s1" pass="2" fail="0" skip="0">Authentication</stat>
 </suite>
 </statistics>
 <errors>
