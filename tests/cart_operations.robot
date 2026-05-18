@@ -7,7 +7,7 @@ Resource    ../pages/cart_page.robot
 Resource    ../pages/alert_page.robot
 
 *** Variables ***
-${Browser}    Chrome
+${Browser}    headless-chrome     # headless for CI, chrome for local                     # Chrome
 
 *** Test Cases ***
 Add Elements To Cart
