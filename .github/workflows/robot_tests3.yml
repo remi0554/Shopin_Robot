@@ -62,7 +62,7 @@ jobs:
       - name: Run Robot Tests
         run: |
           robot --outputdir results \
-                --variable BROWSER:headless-chrome \
+                --variable BROWSER:chrome \
                 tests/
 
       # 8 — Upload results even if tests fail
