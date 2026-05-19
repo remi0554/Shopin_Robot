@@ -5,7 +5,7 @@ Resource    ../pages/home_page.robot
 Resource    ../pages/login_page.robot
 
 *** Variables ***
-${Browser}    headless-chrome     # headless for CI, chrome for local                     # Chrome
+${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
 
 *** Test Cases ***
 Authentication With Valid Credentials
