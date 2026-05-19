@@ -13,10 +13,9 @@ on:
       browser:
         description: 'Browser to use'
         required: true
-        default: 'headless-chrome'
+        default: 'chrome'
         type: choice
         options:
-          - headless-chrome
           - chrome
       test_suite:
         description: 'Test suite to run'
