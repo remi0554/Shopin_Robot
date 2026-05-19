@@ -8,7 +8,7 @@ ${BROWSER}     chrome
 *** Keywords ***
 Access To URL
     
-    [Arguments]    ${Browser}
+#    [Arguments]    ${Browser}
     
     ${URL}=    Get Env    URL
     # Open Browser     ${URL}    ${Browser}

@@ -5,11 +5,11 @@ Resource    ../pages/home_page.robot
 Resource    ../pages/login_page.robot
 
 *** Variables ***
-${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
+${BROWSER}     chrome
 
 *** Test Cases ***
 Authentication With Valid Credentials
-    Access To URL    ${Browser}
+    Access To URL
     Sleep    2s
     Login1
     Sleep    2s

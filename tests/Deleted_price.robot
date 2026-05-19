@@ -6,7 +6,8 @@ Resource    ../pages/home_page.robot
 Resource    ../pages/price-del_page.robot
 
 *** Variables ***
-${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
+${BROWSER}     chrome$
+
 ${Product_Reference}    532
 
 
@@ -14,7 +15,7 @@ ${Product_Reference}    532
 
 Go To Accessories Page Crossed Prices
     [Documentation]    Go to accessories page and select snapback cap
-    Access To URL    ${Browser}
+    Access To URL
     Sleep    2s
     Go To Accessories Page
     Sleep    2s

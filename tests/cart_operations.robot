@@ -7,13 +7,13 @@ Resource    ../pages/cart_page.robot
 Resource    ../pages/alert_page.robot
 
 *** Variables ***
-${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
+${BROWSER}     chrome
 
 *** Test Cases ***
 Add Elements To Cart
     [Documentation]    authenticate and add elements to cart
     [Tags]    cart
-    access To URL    ${Browser}
+    access To URL
     Sleep    2s
     login2
     Sleep    2s
@@ -22,7 +22,7 @@ Add Elements To Cart
 Add New Elements To Cart
     [Documentation]    authenticate, add elements to cart and add new ones
     [Tags]    cart
-    access To URL    ${Browser}
+    access To URL
     Sleep    2s
     Login1
     Sleep   2s
@@ -31,7 +31,7 @@ Add New Elements To Cart
 Add Third Element To Cart
     [Documentation]    authenticate, add elements to cart and add new ones
     [Tags]    cart
-    access To URL    ${Browser}
+    access To URL
     Sleep    2s
     Login1
     Sleep    2s

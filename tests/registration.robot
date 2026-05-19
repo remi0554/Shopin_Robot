@@ -5,14 +5,14 @@ Resource    ../pages/register_page.robot
 
 
 *** Variables ***
-${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
+${BROWSER}     chrome
 ${Used_Mail}    remitgm@gmail.com
 
 *** Test Cases ***
 
 Account Creation with Used Email
     [Documentation]    Go to shopin registration page, try to create an account with random username and password but used email, and check that error message is visible
-    Access To URL    ${Browser}
+    Access To URL
     Sleep    4s
     Go To    https://shop-in.ovh/mon-compte/
 
