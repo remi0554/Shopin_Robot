@@ -30,16 +30,18 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "USERNAMES=${{ secrets.USERNAMES }}" >> .env
-          echo "PASSWORDS=${{ secrets.PASSWORDS }}" >> .env
+          echo "USERNAME1=${{ secrets.USERNAME1 }}" >> .env
+          echo "PASSWORD1=${{ secrets.PASSWORD1 }}" >> .env
 
-      - name: Run Robot Tests         # ← HERE
+      - name: Run Robot Tests
         run: |
           robot --outputdir results \
-                --variable BROWSER:chrome \    # ← THIS LINE
+                --variable BROWSER:chrome \
+                --variable HEADLESS:true \
                 tests/
         env:
           DISPLAY: :99
+          BROWSER: chrome
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
