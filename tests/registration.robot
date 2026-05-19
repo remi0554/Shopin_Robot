@@ -5,7 +5,7 @@ Resource    ../pages/register_page.robot
 
 
 *** Variables ***
-${Browser}    headless-chrome     # headless for CI, chrome for local                     # Chrome
+${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
 ${Used_Mail}    remitgm@gmail.com
 
 *** Test Cases ***
