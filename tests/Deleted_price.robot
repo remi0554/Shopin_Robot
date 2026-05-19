@@ -6,7 +6,7 @@ Resource    ../pages/home_page.robot
 Resource    ../pages/price-del_page.robot
 
 *** Variables ***
-${Browser}    headless-chrome     # headless for CI, chrome for local                     # Chrome
+${Browser}    Chrome    # headless-chrome      headless for CI, chrome for local                     # 
 ${Product_Reference}    532
 
 
