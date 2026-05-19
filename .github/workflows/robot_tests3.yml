@@ -46,7 +46,6 @@ jobs:
         run: |
           robot --outputdir results \
                 --variable BROWSER:chrome \
-                --variable HEADLESS:true \
                 tests/
         env:
           DISPLAY: :99
